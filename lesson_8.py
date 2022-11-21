@@ -13,3 +13,6 @@ def find_it(seq):
     return result[0]
 
 
+def is_square(n):
+    return True if n ** 0.5 == int(n ** 0.5) else False
+
