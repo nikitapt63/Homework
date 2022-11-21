@@ -8,3 +8,8 @@ def spin_words(sentence: str):
     return " ".join(result)
 
 
+def find_it(seq):
+    result = list(filter(lambda x: seq.count(x) % 2 != 0, seq))
+    return result[0]
+
+
