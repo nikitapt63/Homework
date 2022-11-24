@@ -1,3 +1,5 @@
+import re
+import string
 from random import randint
 
 
@@ -45,6 +47,62 @@ def digital_root(n):
         return digital_root(reduce(lambda x, y: int(x) + int(y), str(n)))
 
 
+def camel_case(string: str) -> str:
+    string_title = string.title()
+    return print(string_title.replace(" ", ""))
+
+
+def palindromeD_Z(num: int) -> int:
+ i = num + 1
+ while str(i)[0] != str(i)[-1]:
+    i += 1
+ return print(i)
 
 
 
+def order(array):
+  words = [(int(l), w) for w in array.split() for l in w if l.isdigit()]
+  words.sort(key=lambda t: t[0])
+  return " ".join(t[1] for t in words)
+
+
+def palin(n):
+    while True:
+        n += 1
+        if str(n) == str(n)[::-1]:
+            return n
+
+
+def line(text):
+  text_arr = list(text)
+  i = 0
+  while i < len(text_arr):
+    if text_arr[i] == '-' or text_arr[i] == '_':
+      del text_arr[i]
+      if i != len(text_arr) - 1 and text_arr[i].isalpha():
+        text_arr[i] = text_arr[i].upper()
+        i += 1
+    else:
+      i += 1
+  return ''.join(text_arr)
+
+
+def digit_in_word(word):
+    return sorted(word)[0]
+
+# 'is2 Thi1s T4est 3a' -> 'Thi1s is2 3a T4est'
+
+def digit_in_word(word):
+    return sorted(word)[0]
+
+print(digit_in_word('Thi1s'))
+
+
+def sort_for_digit_in_words(str):
+    arr = str.split()
+    print(arr)
+    arr.sort(key=digit_in_word)
+    return ' '.join(arr)
+
+
+print(sort_for_digit_in_words('is2 Thi1s T4est 3a'))
