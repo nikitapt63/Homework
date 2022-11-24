@@ -20,3 +20,4 @@ class Employee(Human, WorkerMixin):
         Human.__init__(self, name, surname)
         self.profession = profession
 
+print("Hello, world!")
